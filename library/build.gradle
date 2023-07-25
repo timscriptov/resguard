@@ -1,0 +1,21 @@
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
+apply plugin: 'kotlin'
+
+dependencies {
+//    implementation("org.jetbrains:annotations:24.0.1")
+    implementation("io.github.reandroid:ARSCLib:1.2.3")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.java
+                groupId = 'com.mcal'
+                artifactId = 'resguard'
+                version = "1.0"
+            }
+        }
+    }
+}
