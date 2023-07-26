@@ -1,5 +1,6 @@
 package com.mcal.resguard.utils
 
+import com.mcal.resguard.utils.RefactorUtil.generateUniqueName
 import com.reandroid.arsc.chunk.TableBlock
 import com.reandroid.arsc.model.ResourceEntry
 import com.reandroid.arsc.value.Entry
@@ -21,8 +22,7 @@ class StringValueNameGenerator(
         val resourceEntryMap = mapResourceEntries()
         val nameMap = generate()
         for ((key, name) in nameMap) {
-            val resourceEntry = resourceEntryMap[key]
-            resourceEntry!!.name = name
+            resourceEntryMap[key]?.name = name
         }
     }
 

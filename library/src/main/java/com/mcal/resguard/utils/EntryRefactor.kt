@@ -3,7 +3,9 @@ package com.mcal.resguard.utils
 import com.reandroid.identifiers.ResourceIdentifier
 import com.reandroid.identifiers.TypeIdentifier
 
-class EntryRefactor(private val mTypeIdentifier: TypeIdentifier) {
+class EntryRefactor(
+    private val mTypeIdentifier: TypeIdentifier
+) {
     fun refactorAll(): Int {
         var result = 0
         for (ri in mTypeIdentifier.items) {

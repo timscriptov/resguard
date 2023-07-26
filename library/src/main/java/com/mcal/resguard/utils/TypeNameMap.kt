@@ -4,7 +4,7 @@ import com.reandroid.xml.XMLDocument
 import com.reandroid.xml.XMLElement
 import java.util.Objects
 
-class TypeNameMap : Comparator<TypeName> {
+class TypeNameMap : Comparator<TypeNameMap.TypeName> {
     private val map: MutableMap<Int, TypeName> = HashMap()
 
     operator fun contains(name: String?): Boolean {
