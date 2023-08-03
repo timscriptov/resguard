@@ -3,7 +3,6 @@ package com.mcal.resguard.utils
 import com.mcal.resguard.utils.StringHelper.toHex
 import com.reandroid.apk.ApkModule
 import com.reandroid.identifiers.TableIdentifier
-import java.io.File
 import java.io.IOException
 
 class AutoRefactor(
@@ -19,14 +18,10 @@ class AutoRefactor(
         println("Validating file paths ...")
         var renameCount = 0
         val resFileList = mApkModule.listResFiles()
+        var path: String
         for (resFile in resFileList) {
-            val path =
-                StringHelper.md5(
-                    (StringHelper.md5(File(resFile.filePath).name) + StringHelper.md5(
-                        StringHelper.generateRandomString(32)
-                    )).toHex()
-                ).toHex()
-            resFile.filePath = path
+            path = resFile.filePath
+            resFile.filePath = StringHelper.md5(path).toHex() + StringHelper.getFileExtension(path)
             renameCount++
         }
         return renameCount

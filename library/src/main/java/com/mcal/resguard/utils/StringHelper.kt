@@ -1,10 +1,23 @@
 package com.mcal.resguard.utils
 
+import java.io.File
 import java.nio.charset.StandardCharsets
 import java.security.MessageDigest
 
 
 object StringHelper {
+    @JvmStatic
+    fun getFileExtension(filePath: String): String {
+        val file = File(filePath)
+        val fileName = file.name
+        val dotIndex = fileName.lastIndexOf(".")
+        return if (dotIndex != -1) {
+            fileName.substring(dotIndex + 1)
+        } else {
+            ""
+        }
+    }
+
     @JvmStatic
     fun md5(str: String): ByteArray =
         MessageDigest.getInstance("MD5").digest(str.toByteArray(StandardCharsets.UTF_8))
