@@ -12,7 +12,7 @@ object StringHelper {
         val fileName = file.name
         val dotIndex = fileName.lastIndexOf(".")
         return if (dotIndex != -1) {
-            fileName.substring(dotIndex + 1)
+            fileName.substring(dotIndex)
         } else {
             ""
         }
