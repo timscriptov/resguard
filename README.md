@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/TimScriptov/apkparser.svg)](https://jitpack.io/#TimScriptov/apkparser)
+[![](https://jitpack.io/v/timscriptov/resguard.svg)](https://jitpack.io/#timscriptov/resguard)
 
 ## Add it in your root build.gradle at the end of repositories:
 ```groovy
@@ -13,28 +13,15 @@
 ## Add the dependency
 ```groovy
     dependencies {
-        implementation 'com.github.TimScriptov:apkparser:Tag'
+        implementation 'com.github.timscriptov:resguard:Tag'
     }
 ```
 
-## Read AndroidManifest.xml
+## Obfuscate resources
 ```kotlin
-    val parser = ManifestParser(File("path"))
-    val name = parser.getApplicationName()
+    ResGuard(File("path/inFile.apk"), File("path/outFile.apk"), false, null)
 ```
 
 ```java
-    final ManifestParser parser = new ManifestParser(new File("path"));
-    final String name = parser.getApplicationName();
-```
-
-## Update AndroidManifest.xml
-```kotlin
-    val parser = ManifestParser(File("path"))
-    parser.setApplicationName("com.mypackage.MyApp")
-```
-
-```java
-    final ManifestParser parser = new ManifestParser(new File("path"));
-    parser.setApplicationName("com.mypackage.MyApp");
+    ResGuard(new File("path/inFile.apk"), new File("path/outFile.apk"), false, null);
 ```
