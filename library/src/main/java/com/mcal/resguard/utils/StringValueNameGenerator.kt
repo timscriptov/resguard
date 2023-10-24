@@ -6,15 +6,12 @@ import com.reandroid.arsc.model.ResourceEntry
 import com.reandroid.arsc.value.Entry
 import com.reandroid.arsc.value.ResTableEntry
 import com.reandroid.arsc.value.ValueType
-import java.util.ArrayList
-import java.util.HashMap
-import java.util.HashSet
-import java.util.Locale
+import java.util.*
 import java.util.regex.Pattern
 
 class StringValueNameGenerator(
     private val tableBlock: TableBlock
-    ) {
+) {
     private val mGeneratedNames: MutableSet<String> = HashSet()
     private val mSkipIds: MutableSet<Int> = HashSet()
 

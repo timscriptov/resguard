@@ -2,7 +2,7 @@ package com.mcal.resguard.utils
 
 import com.reandroid.xml.XMLDocument
 import com.reandroid.xml.XMLElement
-import java.util.Objects
+import java.util.*
 
 class TypeNameMap : Comparator<TypeNameMap.TypeName> {
     private val map: MutableMap<Int, TypeName> = HashMap()
